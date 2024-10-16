@@ -298,9 +298,12 @@ The dataset contains impedance response data for wild-type and mutated cancer ce
 ARX models with different structures are fitted to the data, and the best model for each cell type is selected. For each dataset, the **a- and b-parameters** are determined. Stable ARX models are split into **series, parallel**, or **feedback configurations**, and first-order models are calculated. Stability and coupling of cellular processes are assessed by analyzing these configurations.
 
 #### Equation for Feedback Configuration:
+
+$$
 \[
 y(k) = \frac{B_0}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
 \]
+$$
 
 Where:
 - \( A_1 \) and \( A_2 \) are the poles from the first-order TFs (transfer functions).
@@ -308,15 +311,19 @@ Where:
 
 The general second-order feedback model can be re-written as:
 
+$$
 \[
 y(k) = \frac{b_1}{1 + a_1 z^{-1}} \cdot \frac{b_1}{1 + a_2 z^{-1}} u(k)
 \]
+$$
 
 Rewriting for clarity, this becomes:
 
+$$
 \[
 y(k) = \frac{B_0 + B_1 z^{-1}}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
 \]
+$$
 
 #### Identified Models for Each Cell Type:
 
@@ -343,8 +350,8 @@ y(k) = \frac{B_0 + B_1 z^{-1}}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
 $$
 
 Where:
-- \( A_1 \), \( A_2 \) are the poles from the combined first-order TF.
-- \( B_0 \), \( B_1 \) represent the coefficients of the input function.
+- $\( A_1 \)$, $\( A_2 \)$ are the poles from the combined first-order TF.
+- $\( B_0 \)$, $\( B_1 \)$ represent the coefficients of the input function.
 
 #### Table of Parameters for Each Cell Type:
 | Cell  | A1        | A2        | B1       | B2       | TC1       | TC2        | SSG1      | SSG2      |
@@ -358,7 +365,7 @@ Where:
 | M3431 | -0.98691  | -0.99968  | 0.00868  | 0.00625  | 75.89573  | 500.23934  | 0.66298   | 1.68965   |
 | Unknown1 | -0.98863  | -0.99942  | 0.01252  | 0.00396  | 186.65236 | 891.53040 | 1.14684   | 5.33281   |
 
-**Table 8** – Poles \(a_1\), \(a_2\), coefficients \(b_1\), \(b_2\), and characteristics like **TC1**, **TC2**, **SSG1**, **SSG2** for each cell type.
+**Table 8** – Poles $\(a_1\)$, $\(a_2\)$, coefficients $\(b_1\)$, $\(b_2\)$, and characteristics like **TC1**, **TC2**, **SSG1**, **SSG2** for each cell type.
 
 ---
 
