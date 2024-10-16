@@ -289,13 +289,36 @@ The \(b_0\) parameters, on the other hand, show stronger fluctuations but remain
 ### Data Preparation
 The dataset contains impedance response data for wild-type and mutated cancer cell receptors, with measurements sampled at 1 Hz. The input is the presence or absence of a ligand, and the output is the **cell index (CI)**. The data is visualized and pre-processed before proceeding to system identification.
 
-![Figuur 9 – gemeten output voor cellen van het type: WildType, Mutatie334, Mutatie 343, Unknown en input](https://github.com/user-attachments/assets/fbf34e1a-4c07-4891-bb52-03779cde5f78)
-Figuur 9 – Measured output for cells of type: WildType, Mutatie334, Mutatie343, Unknown, and input
+![Figuur 9 – gemeten output voor cellen van het type: WildType, Mutatie334, Mutatie 343, Unknown en input](https://github.com/user-attachments/assets/fbf34e1a-4c07-4891-bb52-03779cde5f78)  
+*Figuur 9 – Measured output for cells of type: WildType, Mutatie334, Mutatie343, Unknown, and input*
 
 ---
 
 ### System Identification
 ARX models with different structures are fitted to the data, and the best model for each cell type is selected. For each dataset, the **a- and b-parameters** are determined. Stable ARX models are split into **series, parallel**, or **feedback configurations**, and first-order models are calculated. Stability and coupling of cellular processes are assessed by analyzing these configurations.
+
+#### Equation for Feedback Configuration:
+\[
+y(k) = \frac{B_0}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
+\]
+
+Where:
+- \( A_1 \) and \( A_2 \) are the poles from the first-order TFs (transfer functions).
+- \( B_0 \) is the constant coefficient for the input function.
+
+The general second-order feedback model can be re-written as:
+
+\[
+y(k) = \frac{b_1}{1 + a_1 z^{-1}} \cdot \frac{b_1}{1 + a_2 z^{-1}} u(k)
+\]
+
+Rewriting for clarity, this becomes:
+
+\[
+y(k) = \frac{B_0 + B_1 z^{-1}}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
+\]
+
+#### Identified Models for Each Cell Type:
 
 | Cell Type  | A1        | A2        | B0       | B1       | Delay    | YIC       | \(R^2\)  |
 |------------|-----------|-----------|----------|----------|----------|-----------|----------|
@@ -308,16 +331,43 @@ ARX models with different structures are fitted to the data, and the best model 
 
 ---
 
-### Classification
-The two unknown receptor types are classified based on model characteristics (a- and b-parameters, **SSG**, **TC-values**). Visual methods such as scatter plots and box plots are used for classification, comparing the unknown measurements with the known receptor types.
+### Higher-Order Systems
+For higher-order systems, the parameters are extracted from the second-order model based on the identified poles and coefficients from the first-order transfer functions.
 
-![Figuur 10 – Boxplots van a1, b1 en b2 per celtype](https://github.com/user-attachments/assets/8f992697-3df5-4e70-b49e-39f85a7b3593)
-Figuur 10 – Boxplots of a1, b1, and b2 per cell type
+#### Second-Order Feedback Model:
+\[
+y(k) = \frac{B_0 + B_1 z^{-1}}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
+\]
+
+Where:
+- \( A_1 \), \( A_2 \) are the poles from the combined first-order TF.
+- \( B_0 \), \( B_1 \) represent the coefficients of the input function.
+
+#### Table of Parameters for Each Cell Type:
+| Cell  | A1        | A2        | B1       | B2       | TC1       | TC2        | SSG1      | SSG2      |
+|-------|-----------|-----------|----------|----------|-----------|------------|-----------|-----------|
+| WT1   | -0.99185  | -0.99896  | 0.00625  | 0.00602  | 122.22399 | 964.27197  | 0.76692   | 5.81008   |
+| WT2   | -0.98623  | -0.99964  | 0.01438  | 0.00283  | 72.13169  | 2784.98712 | 1.04478   | 7.88707   |
+| WT3   | -0.98790  | -0.99934  | 0.01449  | 0.00332  | 82.76472  | 1510.68097 | 1.20654   | 5.02015   |
+| WT4   | -0.99153  | -1.00000  | 0.01187  | 0.00382  | 117.49870 | 1234.90077 | 1.31511   | 4.68902   |
+| M3341 | -0.99280  | -0.99665  | 0.00568  | 0.00405  | 138.31705 | 297.66123  | 0.78886   | 1.21090   |
+| M3342 | -1.01024  | -0.99190  | 0.00212  | 0.01360  | -98.15090 | 54.73408   | -0.20676  | 7.51766   |
+| M3431 | -0.98691  | -0.99968  | 0.00868  | 0.00625  | 75.89573  | 500.23934  | 0.66298   | 1.68965   |
+| Unknown1 | -0.98863  | -0.99942  | 0.01252  | 0.00396  | 186.65236 | 891.53040 | 1.14684   | 5.33281   |
+
+**Table 8** – Poles \(a_1\), \(a_2\), coefficients \(b_1\), \(b_2\), and characteristics like **TC1**, **TC2**, **SSG1**, **SSG2** for each cell type.
 
 ---
 
-![Figuur 11 – Boxplots van b2 per celtype met C1 en C2 van het celtype Unknown](https://github.com/user-attachments/assets/697cb3a9-abb9-4bc3-960f-2e51e7baa77c)
-Figuur 11 – Boxplots for b2 per cell type with C1 and C2 of the Unknown type
+### Classification
+The two unknown receptor types are classified based on model characteristics (a- and b-parameters, **SSG**, **TC-values**). Visual methods such as scatter plots and box plots are used for classification, comparing the unknown measurements with the known receptor types.
+
+![Figuur 10 – Boxplots van a1, b1 en b2 per celtype](https://github.com/user-attachments/assets/8f992697-3df5-4e70-b49e-39f85a7b3593)  
+*Figuur 10 – Boxplots of a1, b1, and b2 per cell type*
+
+![Figuur 11 – Boxplots van b2 per celtype met C1 en C2 van het celtype Unknown](https://github.com/user-attachments/assets/697cb3a9-abb9-4bc3-960f-2e51e7baa77c)  
+*Figuur 11 – Boxplots for b2 per cell type with C1 and C2 of the Unknown type*
+
 
 
 
