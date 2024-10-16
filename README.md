@@ -20,6 +20,8 @@ Using MATLAB and time-invariant ARX models, the project explores the dynamic rel
   - [Classification](#classification)
 - [How to Run the Project](#how-to-run-the-project)
 
+---
+
 ## Problem 1: Body weight and energy intake
 
 ### Data Preparation
@@ -36,59 +38,59 @@ This pre-processing ensured clean and consistent input data for system identific
 
 ![image](https://github.com/user-attachments/assets/3a96bddc-c9d4-4681-a04e-e97b2ad650b6)
 
-
+---
 
 ### System Identification
 
-Selecting the optimal model requires balancing model accuracy with complexity. Several criteria were used to evaluate model quality, including \(R^2\), \(R^2_{CAP}\), AIC (Akaike Information Criterion), and YIC (Young Information Criterion). These metrics ensure that the model explains the data effectively while avoiding overfitting due to excessive complexity.
+Selecting the optimal model requires balancing model accuracy with complexity. Several criteria were used to evaluate model quality, including $\( R^2 \)$, $\( R^2_{CAP} \)$, AIC (Akaike Information Criterion), and YIC (Young Information Criterion). These metrics ensure that the model explains the data effectively while avoiding overfitting due to excessive complexity.
 
-- **\(R^2\)**: Represents how much of the variance in body weight is explained by the model. Higher \(R^2\) values indicate better fit.
+- **$\( R^2 \)$**: Represents how much of the variance in body weight is explained by the model. Higher $\( R^2 \)$ values indicate better fit.
 - **AIC/YIC**: Penalize models with additional parameters to avoid overfitting. AIC focuses on the overall fit, while YIC penalizes models with higher variance in parameter estimates, ensuring model robustness.
 
 #### Key Findings
-Models were optimized for YIC first and then for \(R^2\) to strike a balance between accuracy and simplicity. Although some models yielded high \(R^2\) values, they were sometimes overly complex. This is particularly true for models with additional delays or extra parameters, which can result in misleadingly high \(R^2\) values while failing to generalize.
+Models were optimized for YIC first and then for $\( R^2 \)$ to strike a balance between accuracy and simplicity. Although some models yielded high $\( R^2 \)$ values, they were sometimes overly complex. This is particularly true for models with additional delays or extra parameters, which can result in misleadingly high $\( R^2 \)$ values while failing to generalize.
 
-For example, Participant 3's model with parameters [1 1 2 0] achieved an excellent \(R^2_{CAP}\) of 0.984874 and YIC of -9.668, as shown in Figure 3. However, an alternative model with parameters [1 1 0 0] produced a better visual fit to the data (Figure 4), despite having a lower \(R^2\) of 0.700795 and higher YIC of -0.947. This emphasizes the importance of considering multiple criteria during model selection.
+For example, Participant 3's model with parameters [1 1 2 0] achieved an excellent $\( R^2_{CAP} \)$ of 0.984874 and YIC of -9.668, as shown in Figure 3. However, an alternative model with parameters [1 1 0 0] produced a better visual fit to the data (Figure 4), despite having a lower $\( R^2 \)$ of 0.700795 and higher YIC of -0.947. This emphasizes the importance of considering multiple criteria during model selection.
 
-The tables below summarize the results for each participant, showing the YIC, \(R^2\), AIC, and other relevant metrics, along with the distributions of a and b parameters for the models.
+The tables below summarize the results for each participant, showing the YIC, $\( R^2 \)$, AIC, and other relevant metrics, along with the distributions of a and b parameters for the models.
 
 #### Tables
 
-| Participant | # a-para | # b-para | Delays | AR  | YIC    | \(R^2\) | AIC    | S2      | EVN       | CondP     |
-|-------------|----------|----------|--------|-----|--------|---------|--------|---------|-----------|-----------|
-| 1           | 1        | 1        | 0      | 1   | -18.434| 0.998549| -3.268 | 3.2836  | -12.6207  | 0.0000e+00|
-| 2           | 1        | 1        | 0      | 0   | -16.709| 0.998102| -2.276 | 2.8552  | -12.6145  | 0.0000e+00|
-| 3           | 1        | 1        | 0      | 0   | -0.947 | 0.700795| 2.2    | 7.7851  | -7.1630   | 0.0000e+00|
-| 4           | 1        | 1        | 0      | 0   | -9.003 | 0.972577| 4.05   | 1.2295  | -10.0204  | 0.0000e+00|
-| 5           | 1        | 1        | 0      | 1   | -16.138| 0.997113| -2.276 | 8.8532  | -12.2981  | 0.0000e+00|
-| 6           | 1        | 1        | 0      | 1   | -16.046| 0.996954| -2.349 | 8.2350  | -12.0069  | 0.0000e+00|
-| 7           | 1        | 1        | 0      | 0   | -9.679 | 0.979289| 0.147  | 9.992e-01| -10.1183  | 0.0000e+00|
-| 8           | 1        | 1        | 0      | 1   | -11.307| 0.985563| -0.658 | 4.4667  | -10.7327  | 0.0000e+00|
-| 9           | 1        | 1        | 0      | 0   | -14.836| 0.996083| -2.402 | 7.8047  | -11.1039  | 0.0000e+00|
-| 10          | 1        | 1        | 0      | 1   | -14.444| 0.995668| -1.399 | 2.1298  | -11.8927  | 0.0000e+00|
-| 11          | 1        | 1        | 0      | 0   | -4.571 | 0.892236| 1.585  | 4.2058  | -9.2670   | 0.0000e+00|
-| 12          | 1        | 1        | 0      | 0   | -0.434 | 0.676610| 2.478  | 1.027e+01| -7.1192   | 0.0000e+00|
-| 13          | 1        | 1        | 0      | 0   | -2.474 | 0.811897| 2.016  | 6.4755  | -8.1145   | 0.0000e+00|
+| Participant | # a-para | # b-para | Delays | AR  | YIC    | $\( R^2 \)$ | AIC    | S2      | EVN       | CondP     |
+|-------------|----------|----------|--------|-----|--------|-------------|--------|---------|-----------|-----------|
+| 1           | 1        | 1        | 0      | 1   | -18.434| 0.998549    | -3.268 | 3.2836  | -12.6207  | 0.0000e+00|
+| 2           | 1        | 1        | 0      | 0   | -16.709| 0.998102    | -2.276 | 2.8552  | -12.6145  | 0.0000e+00|
+| 3           | 1        | 1        | 0      | 0   | -0.947 | 0.700795    | 2.2    | 7.7851  | -7.1630   | 0.0000e+00|
+| 4           | 1        | 1        | 0      | 0   | -9.003 | 0.972577    | 4.05   | 1.2295  | -10.0204  | 0.0000e+00|
+| 5           | 1        | 1        | 0      | 1   | -16.138| 0.997113    | -2.276 | 8.8532  | -12.2981  | 0.0000e+00|
+| 6           | 1        | 1        | 0      | 1   | -16.046| 0.996954    | -2.349 | 8.2350  | -12.0069  | 0.0000e+00|
+| 7           | 1        | 1        | 0      | 0   | -9.679 | 0.979289    | 0.147  | 9.992e-01| -10.1183  | 0.0000e+00|
+| 8           | 1        | 1        | 0      | 1   | -11.307| 0.985563    | -0.658 | 4.4667  | -10.7327  | 0.0000e+00|
+| 9           | 1        | 1        | 0      | 0   | -14.836| 0.996083    | -2.402 | 7.8047  | -11.1039  | 0.0000e+00|
+| 10          | 1        | 1        | 0      | 1   | -14.444| 0.995668    | -1.399 | 2.1298  | -11.8927  | 0.0000e+00|
+| 11          | 1        | 1        | 0      | 0   | -4.571 | 0.892236    | 1.585  | 4.2058  | -9.2670   | 0.0000e+00|
+| 12          | 1        | 1        | 0      | 0   | -0.434 | 0.676610    | 2.478  | 1.027e+01| -7.1192   | 0.0000e+00|
+| 13          | 1        | 1        | 0      | 0   | -2.474 | 0.811897    | 2.016  | 6.4755  | -8.1145   | 0.0000e+00|
 
-_Table 1 – Number of a and b parameters per individual, YIC, \(R^2\), and AIC_
+_Table 1 – Number of a and b parameters per individual, YIC, $\( R^2 \)$, and AIC_
 
-| Participant | \(R^2_{CAP}\) |
-|-------------|---------------|
-| 1           | 0.9982        |
-| 2           | 0.9980        |
-| 3           | 0.9357        |
-| 4           | 0.9717        |
-| 5           | 0.9971        |
-| 6           | 0.9974        |
-| 7           | 0.9978        |
-| 8           | 0.9856        |
-| 9           | 0.9957        |
-| 10          | 0.9971        |
-| 11          | 0.8922        |
-| 12          | 0.6766        |
-| 13          | 0.8119        |
+| Participant | $\( R^2_{CAP} \)$ |
+|-------------|--------------------|
+| 1           | 0.9982             |
+| 2           | 0.9980             |
+| 3           | 0.9357             |
+| 4           | 0.9717             |
+| 5           | 0.9971             |
+| 6           | 0.9974             |
+| 7           | 0.9978             |
+| 8           | 0.9856             |
+| 9           | 0.9957             |
+| 10          | 0.9971             |
+| 11          | 0.8922             |
+| 12          | 0.6766             |
+| 13          | 0.8119             |
 
-_Table 2 – \(R^2_{CAP}\) per participant_
+_Table 2 – $\( R^2_{CAP} \)$ per participant_
 
 ---
 
@@ -137,14 +139,14 @@ _Table 4 – b-parameters for each participant_
 
 For the eleven 1st-order models, the steady-state gain (SSG) and time constant (TC) are calculated as follows:
 
-\[
+$$
 SSG = \frac{b_0}{1 + a_1}
-\]
-\[
+$$
+$$
 TC = -\frac{\Delta t}{\ln(-a_1)}
-\]
+$$
 
-With \(\Delta t = 1\) min, the following values were computed:
+With \( \Delta t = 1 \) min, the following values were computed:
 
 | Participant | SSG   | TC     |
 |-------------|-------|--------|
@@ -189,32 +191,30 @@ _Figure 6 – Distribution of b-parameters_
 
 In the next step, an average model was determined. This method results in the following general model:
 
-$
-\[
+$$
 y(k) = 0.9488 \cdot y(k-1) + 0.00048213 \cdot u(k)
-\]
-$
+$$
 
-This general model was applied to each column, and the CAPTAIN toolbox was used to obtain a simulated model. The \(R^2_{CAP\_averaged}\) is shown in Table 5.
+This general model was applied to each column, and the CAPTAIN toolbox was used to obtain a simulated model. The $\( R^2_{CAP\_averaged} \)$ is shown in Table 5.
 
 ![Figuur 6 – Comparison between BW and population model with EI as input (kg) vs time (weeks)](https://github.com/user-attachments/assets/8f0ee06e-1f93-4146-9571-9e86f1de8cd1)
 
 _Figure 6 – Comparison between BW and population model with EI as input (kg) vs time (weeks)_
 
-| Participant | \(R^2_{CAP\_averaged}\) |
-|-------------|--------------------------|
-| 1           | 0.9629                   |
-| 2           | 0.3344                   |
-| 5           | 0.2966                   |
-| 7           | 0.8519                   |
-| 8           | 0.0732                   |
-| 9           | 0.9014                   |
-| 10          | 0.9316                   |
-| 13          | 0.2043                   |
+| Participant | $\( R^2_{CAP\_averaged} \)$ |
+|-------------|----------------------------|
+| 1           | 0.9629                     |
+| 2           | 0.3344                     |
+| 5           | 0.2966                     |
+| 7           | 0.8519                     |
+| 8           | 0.0732                     |
+| 9           | 0.9014                     |
+| 10          | 0.9316                     |
+| 13          | 0.2043                     |
 
-_Table 5 – SSG and TC_
+_Table 5 – $\( R^2_{CAP\_averaged} \)$ per participant_
 
-It is noted that the \(R^2_{CAP\_averaged}\) is good for models 1, 7, 9, and 10. However, for models 2, 5, 8, and 11, the averaged \(R^2_{CAP}\) values are poor. Additionally, no \(R^2_{CAP\_averaged}\) was found for models 3, 6, 12, and 14, as these models are unstable, with poles outside the unit circle on the iopzplot. These conclusions can also be seen in Figure 6. The population model underperforms compared to individual models due to the uneven distribution of the b-parameters (Figure 6). A more even distribution of b-parameters would provide a better representation of the data.
+It is noted that the $\( R^2_{CAP\_averaged} \)$ is good for models 1, 7, 9, and 10. However, for models 2, 5, 8, and 11, the averaged $\( R^2_{CAP} \)$ values are poor. Additionally, no $\( R^2_{CAP\_averaged} \)$ was found for models 3, 6, 12, and 14, as these models are unstable, with poles outside the unit circle on the iopzplot. These conclusions can also be seen in Figure 6. The population model underperforms compared to individual models due to the uneven distribution of the b-parameters (Figure 6). A more even distribution of b-parameters would provide a better representation of the data.
 
 #### 3.2 Delay
 
@@ -222,25 +222,37 @@ No delay is considered because BW measurements occur at the end of each week. Th
 
 #### 3.3 Time-Invariant Population Model Discussion
 
-##### 3.3.1 Interpretation of \(a_1\) and \(b_0\)
+##### 3.3.1 Interpretation of \( a_1 \) and \( b_0 \)
 
-- The higher the \(a_1\) parameter, the more the output term \(a_1 \cdot y(k-1)\) is increased, meaning that for each k, the preceding k-1 term has a greater impact. For most individuals, this means the simulated output is overshadowed by the preceding term \(y(k-1)\). The \(a_1\) parameter tends to drive the simulated output back to its baseline (Figure 7). Consequently, with a higher \(a_1\), the system reaches steady state more quickly, limiting weight loss.
+- The higher the \( a_1 \) parameter, the more the output term \( a_1 \cdot y(k-1) \) is increased, meaning that for each $k$, the preceding $k-1$ term has a greater impact. For most individuals, this means the simulated output is overshadowed by the preceding term \( y(k-1) \). The \( a_1 \) parameter tends to drive the simulated output back to its baseline (Figure 7). Consequently, with a higher \( a_1 \), the system reaches steady state more quickly, limiting weight loss.
 
-![Figuur 6 – Influence of increasing \(a_1\) parameter](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
+![Figuur 6 – Influence of increasing \( a_1 \) parameter](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_Figure 6 – Influence of increasing \(a_1\) parameter_
+_Figure 6 – Influence of increasing \( a_1 \) parameter_
 
-- The \(b_0\) parameter, on the other hand, has an opposite effect to \(a_1\). It reduces the simulated output (Figure 7). A higher \(b_0\) means that food intake has a greater impact on body weight. A higher \(b_0\) is observed when individuals are in a starvation mode, indicating food is processed more efficiently. Initially, when individuals consume food, \(a_1\) has no impact, as output stays near steady state. Once weight begins to decrease, \(b_0\) pushes the output lower, driving the system to a new steady state (weight loss).
+- The \( b_0 \) parameter, on the other hand, has an opposite effect to \( a_1 \). It reduces the simulated output (Figure 7). A higher \( b_0 \) means that food intake has a greater impact on body weight. A higher \( b_0 \) is observed when individuals are in a starvation mode, indicating food is processed more efficiently. Initially, when individuals consume food, \( a_1 \) has no impact, as output stays near steady state. Once weight begins to decrease, \( b_0 \) pushes the output lower, driving the system to a new steady state (weight loss).
 
-![Figuur 7 – Influence of increasing \(b_1\) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
+![Figuur 7 – Influence of increasing \( b_1 \) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_Figure 7 – Influence of increasing \(b_1\) parameter_
+_Figure 7 – Influence of increasing \( b_1 \) parameter_
 
 ##### 3.3.2 SSG and TC
 
-The SSG for a 1st-order model is defined as $\(b_0 / (1 + a_1)\)$. For the population model, this results in 0.0094 kg. Thus, a 1kcal/day decrease in energy intake results in a steady-state decrease in body weight of 9.4 grams.
+The SSG for a 1st-order model is defined as:
 
-The time constant (TC) is defined as $\(-\Delta t / \ln(-a_1)\$), which for the population model gives 19.02 weeks. This means it would take 19.02 weeks for the output to reach 63% of its new steady state value after an input change.
+$$
+SSG = \frac{b_0}{1 + a_1}
+$$
+
+For the population model, this results in 0.0094 kg. Thus, a 1kcal/day decrease in energy intake results in a steady-state decrease in body weight of 9.4 grams.
+
+The time constant (TC) is defined as:
+
+$$
+TC = -\frac{\Delta t}{\ln(-a_1)}
+$$
+
+For the population model, this gives 19.02 weeks. This means it would take 19.02 weeks for the output to reach 63% of its new steady state value after an input change.
 
 ---
 
@@ -250,41 +262,39 @@ The time constant (TC) is defined as $\(-\Delta t / \ln(-a_1)\$), which for the 
 
 The DARX function from the CAPTAIN toolbox was used. In this dynamic ARX model, the parameters vary slightly over time. This variation is modeled as a **random walk sequence**.
 
-A noise variance ratio (\(Q_a\)) was estimated using maximum likelihood optimization. After correction, a **smoothing** step was applied.
+A noise variance ratio (\( Q_a \)) was estimated using maximum likelihood optimization. After correction, a **smoothing** step was applied.
 
-![Evolution of \(a_1\) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
+![Evolution of \( a_1 \) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_Figure 8 – Evolution of $\(a_1\)$ parameters vs time (weeks) per individual_
+_Figure 8 – Evolution of \( a_1 \) parameters vs time (weeks) per individual_
 
-![Evolution of \(b_0\) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
+![Evolution of \( b_0 \) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_Figure 9 – Evolution of $\(b_0\)$ parameters vs time (weeks) per individual_
+_Figure 9 – Evolution of \( b_0 \) parameters vs time (weeks) per individual_
 
-| Participant | \(R^2_{DARX}\) |
-|-------------|----------------|
-| 1           | 1              |
-| 2           | 0.995          |
-| 3           | 0.9976         |
-| 4           | 0.9999         |
-| 5           | 0.9951         |
-| 6           | 1              |
-| 7           | 0.8911         |
-| 8           | 0.9348         |
-| 9           | 0.9796         |
-| 10          | 0.9988         |
-| 11          | 0.8031         |
-| 12          | 0.9995         |
-| 13          | 0.9951         |
+| Participant | $\( R^2_{DARX} \)$ |
+|-------------|--------------------|
+| 1           | 1                  |
+| 2           | 0.995              |
+| 3           | 0.9976             |
+| 4           | 0.9999             |
+| 5           | 0.9951             |
+| 6           | 1                  |
+| 7           | 0.8911             |
+| 8           | 0.9348             |
+| 9           | 0.9796             |
+| 10          | 0.9988             |
+| 11          | 0.8031             |
+| 12          | 0.9995             |
+| 13          | 0.9951             |
 
-_Table 6 – \(R^2_{DARX}\) for each individual_
+_Table 6 – $\( R^2_{DARX} \)$ for each individual_
 
-It can be observed that the $\(a_1\)$ parameters remain relatively constant for almost all individuals (Figure 8). Only individuals 8 and 11 show time-dependent variations. Even though most $\(a_1\)$ parameters appear stable, they fluctuate within their boundaries, ranging from -0.5 to -1.25.
+It can be observed that the \( a_1 \) parameters remain relatively constant for almost all individuals (Figure 8). Only individuals 8 and 11 show time-dependent variations. Even though most \( a_1 \) parameters appear stable, they fluctuate within their boundaries, ranging from -0.5 to -1.25.
 
-The $\(b_0\)$ parameters, on the other hand, show stronger fluctuations but remain within narrow bounds, ranging from 0.005 to 0.0005. All $\(b_0\)$ parameters, except for model 12, exhibit an upward trend. This trend correlates with a reduced energy intake during the later weeks of the study, pushing individuals into a starvation mode. This increase in $\(b_0\)$ is in line with reduced energy intake and the resulting physiological changes observed towards the end of the study.
+The \( b_0 \) parameters, on the other hand, show stronger fluctuations but remain within narrow bounds, ranging from 0.005 to 0.0005. All \( b_0 \) parameters, except for model 12, exhibit an upward trend. This trend correlates with a reduced energy intake during the later weeks of the study, pushing individuals into a starvation mode. This increase in \( b_0 \) is in line with reduced energy intake and the resulting physiological changes observed towards the end of the study.
 
-
-
-
+---
 
 ## Problem 2: Impedance Response of Cancer Cells
 
@@ -302,39 +312,33 @@ ARX models with different structures are fitted to the data, and the best model 
 #### Equation for Feedback Configuration:
 
 $$
-\[
 y(k) = \frac{B_0}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
-\]
 $$
 
 Where:
-- $\( A_1 \)$ and $\( A_2 \)$ are the poles from the first-order TFs (transfer functions).
-- $\( B_0 \)$ is the constant coefficient for the input function.
+- \( A_1 \) and \( A_2 \) are the poles from the first-order TFs (transfer functions).
+- \( B_0 \) is the constant coefficient for the input function.
 
 The general second-order feedback model can be re-written as:
 
 $$
-\[
 y(k) = \frac{b_1}{1 + a_1 z^{-1}} \cdot \frac{b_1}{1 + a_2 z^{-1}} u(k)
-\]
 $$
 
 Rewriting for clarity, this becomes:
 
 $$
-\[
 y(k) = \frac{B_0 + B_1 z^{-1}}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
-\]
 $$
 
 #### Identified Models for Each Cell Type:
 
-| Cell Type  | A1        | A2        | B0       | B1       | Delay    | YIC       | \(R^2\)  |
-|------------|-----------|-----------|----------|----------|----------|-----------|----------|
-| WildType   | -1.9907   | 0.9908    | 0.0062   | -0.0062  | 0        | -27.0150  | 0.9976   |
-| M334       | -1.9949   | 0.9997    | 0.0058   | -0.0058  | 0        | -22.8070  | 0.9987   |
-| M343       | -1.9966   | 0.9994    | 0.0052   | -0.0052  | 0        | -24.9360  | 0.9985   |
-| Unknown    | -1.9942   | 0.9985    | 0.0043   | -0.0043  | 0        | -20.5960  | 0.9991   |
+| Cell Type  | A1        | A2        | B0       | B1       | Delay    | YIC       | $\( R^2 \)$  |
+|------------|-----------|-----------|----------|----------|----------|-----------|-------------|
+| WildType   | -1.9907   | 0.9908    | 0.0062   | -0.0062  | 0        | -27.0150  | 0.9976      |
+| M334       | -1.9949   | 0.9997    | 0.0058   | -0.0058  | 0        | -22.8070  | 0.9987      |
+| M343       | -1.9966   | 0.9994    | 0.0052   | -0.0052  | 0        | -24.9360  | 0.9985      |
+| Unknown    | -1.9942   | 0.9985    | 0.0043   | -0.0043  | 0        | -20.5960  | 0.9991      |
 
 **Table 7** – Identified models for WildType, Mutatie334, Mutatie343, and Unknown cells.
 
@@ -346,14 +350,12 @@ For higher-order systems, the parameters are extracted from the second-order mod
 #### Second-Order Feedback Model:
 
 $$
-\[
 y(k) = \frac{B_0 + B_1 z^{-1}}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
-\]
 $$
 
 Where:
-- $\( A_1 \)$, $\( A_2 \)$ are the poles from the combined first-order TF.
-- $\( B_0 \)$, $\( B_1 \)$ represent the coefficients of the input function.
+- \( A_1 \), \( A_2 \) are the poles from the combined first-order TF.
+- \( B_0 \), \( B_1 \) represent the coefficients of the input function.
 
 #### Table of Parameters for Each Cell Type:
 | Cell  | A1        | A2        | B1       | B2       | TC1       | TC2        | SSG1      | SSG2      |
@@ -367,7 +369,7 @@ Where:
 | M3431 | -0.98691  | -0.99968  | 0.00868  | 0.00625  | 75.89573  | 500.23934  | 0.66298   | 1.68965   |
 | Unknown1 | -0.98863  | -0.99942  | 0.01252  | 0.00396  | 186.65236 | 891.53040 | 1.14684   | 5.33281   |
 
-**Table 8** – Poles $\(a_1\)$, $\(a_2\)$, coefficients $\(b_1\)$, $\(b_2\)$, and characteristics like **TC1**, **TC2**, **SSG1**, **SSG2** for each cell type.
+**Table 8** – Poles \( a_1 \), \( a_2 \), coefficients \( b_1 \), \( b_2 \), and characteristics like **TC1**, **TC2**, **SSG1**, **SSG2** for each cell type.
 
 ---
 
@@ -380,10 +382,12 @@ The two unknown receptor types are classified based on model characteristics (a-
 ![Figuur 11 – Boxplots van b2 per celtype met C1 en C2 van het celtype Unknown](https://github.com/user-attachments/assets/697cb3a9-abb9-4bc3-960f-2e51e7baa77c)  
 *Figuur 11 – Boxplots for b2 per cell type with C1 and C2 of the Unknown type*
 
+---
 
+### How to Run the Project
+The project can be run by following the steps below:
 
-
-
-
-
-
+1. **Clone the repository**.
+2. **Open MATLAB** and load the data files provided in the repository.
+3. **Run the script** for system identification and classification.
+4. **Evaluate the output** through the generated plots, tables, and summary statistics.
