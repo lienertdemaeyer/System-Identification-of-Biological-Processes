@@ -183,19 +183,145 @@ _Figure 6 – Distribution of b-parameters_
 
 
 
-### Biological Interpretation
-An average model for the entire population is created, and the biological significance of the model parameters (such as the steady-state gain and time constant) is discussed. The effect of parameter changes on body weight dynamics is analyzed, and the model's delay (if any) is interpreted.
+### 3. Biological Interpretation
 
-### Time-varying Dynamics
-A method for time-variant parameter estimation is applied to study how parameters change over time. The time-varying dynamics of the a- and b-parameters are plotted and interpreted to understand the variations in biological responses over the 27-week study period.
+#### 3.1 Average Model
 
-## Problem 2: Impedance response of cancer cells
+In the next step, an average model was determined. This method results in the following general model:
+
+\[
+y(k) = 0.9488 \cdot y(k-1) + 0.00048213 \cdot u(k)
+\]
+
+This general model was applied to each column, and the CAPTAIN toolbox was used to obtain a simulated model. The \(R^2_{CAP\_averaged}\) is shown in Table 5.
+
+![Figuur 6 – Comparison between BW and population model with EI as input (kg) vs time (weeks)](https://github.com/user-attachments/assets/8f0ee06e-1f93-4146-9571-9e86f1de8cd1)
+
+_Figure 6 – Comparison between BW and population model with EI as input (kg) vs time (weeks)_
+
+| Participant | \(R^2_{CAP\_averaged}\) |
+|-------------|--------------------------|
+| 1           | 0.9629                   |
+| 2           | 0.3344                   |
+| 5           | 0.2966                   |
+| 7           | 0.8519                   |
+| 8           | 0.0732                   |
+| 9           | 0.9014                   |
+| 10          | 0.9316                   |
+| 13          | 0.2043                   |
+
+_Table 5 – SSG and TC_
+
+It is noted that the \(R^2_{CAP\_averaged}\) is good for models 1, 7, 9, and 10. However, for models 2, 5, 8, and 11, the averaged \(R^2_{CAP}\) values are poor. Additionally, no \(R^2_{CAP\_averaged}\) was found for models 3, 6, 12, and 14, as these models are unstable, with poles outside the unit circle on the iopzplot. These conclusions can also be seen in Figure 6. The population model underperforms compared to individual models due to the uneven distribution of the b-parameters (Figure 6). A more even distribution of b-parameters would provide a better representation of the data.
+
+#### 3.2 Delay
+
+No delay is considered because BW measurements occur at the end of each week. Thus, the impact of energy intake (EI) on body weight (BW) happens without delay, given digestion takes approximately 8 hours.
+
+#### 3.3 Time-Invariant Population Model Discussion
+
+##### 3.3.1 Interpretation of \(a_1\) and \(b_0\)
+
+- The higher the \(a_1\) parameter, the more the output term \(a_1 \cdot y(k-1)\) is increased, meaning that for each k, the preceding k-1 term has a greater impact. For most individuals, this means the simulated output is overshadowed by the preceding term \(y(k-1)\). The \(a_1\) parameter tends to drive the simulated output back to its baseline (Figure 7). Consequently, with a higher \(a_1\), the system reaches steady state more quickly, limiting weight loss.
+
+![Figuur 6 – Influence of increasing \(a_1\) parameter](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
+
+_Figure 6 – Influence of increasing \(a_1\) parameter_
+
+- The \(b_0\) parameter, on the other hand, has an opposite effect to \(a_1\). It reduces the simulated output (Figure 7). A higher \(b_0\) means that food intake has a greater impact on body weight. A higher \(b_0\) is observed when individuals are in a starvation mode, indicating food is processed more efficiently. Initially, when individuals consume food, \(a_1\) has no impact, as output stays near steady state. Once weight begins to decrease, \(b_0\) pushes the output lower, driving the system to a new steady state (weight loss).
+
+![Figuur 7 – Influence of increasing \(b_1\) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
+
+_Figure 7 – Influence of increasing \(b_1\) parameter_
+
+##### 3.3.2 SSG and TC
+
+The SSG for a 1st-order model is defined as \(b_0 / (1 + a_1)\). For the population model, this results in 0.0094 kg. Thus, a 1kcal/day decrease in energy intake results in a steady-state decrease in body weight of 9.4 grams.
+
+The time constant (TC) is defined as \(-\Delta t / \ln(-a_1)\), which for the population model gives 19.02 weeks. This means it would take 19.02 weeks for the output to reach 63% of its new steady state value after an input change.
+
+---
+
+#### 3.4 Time-Variant Model Discussion
+
+##### 3.4.1 Time-Variant Model Estimation
+
+The DARX function from the CAPTAIN toolbox was used. In this dynamic ARX model, the parameters vary slightly over time. This variation is modeled as a **random walk sequence**.
+
+A noise variance ratio (\(Q_a\)) was estimated using maximum likelihood optimization. After correction, a **smoothing** step was applied.
+
+![Evolution of \(a_1\) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
+
+_Figure 8 – Evolution of \(a_1\) parameters vs time (weeks) per individual_
+
+![Evolution of \(b_0\) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
+
+_Figure 9 – Evolution of \(b_0\) parameters vs time (weeks) per individual_
+
+| Participant | \(R^2_{DARX}\) |
+|-------------|----------------|
+| 1           | 1              |
+| 2           | 0.995          |
+| 3           | 0.9976         |
+| 4           | 0.9999         |
+| 5           | 0.9951         |
+| 6           | 1              |
+| 7           | 0.8911         |
+| 8           | 0.9348         |
+| 9           | 0.9796         |
+| 10          | 0.9988         |
+| 11          | 0.8031         |
+| 12          | 0.9995         |
+| 13          | 0.9951         |
+
+_Table 6 – \(R^2_{DARX}\) for each individual_
+
+It can be observed that the \(a_1\) parameters remain relatively constant for almost all individuals (Figure 8). Only individuals 8 and 11 show time-dependent variations. Even though most \(a_1\) parameters appear stable, they fluctuate within their boundaries, ranging from -0.5 to -1.25.
+
+The \(b_0\) parameters, on the other hand, show stronger fluctuations but remain within narrow bounds, ranging from 0.005 to 0.0005. All \(b_0\) parameters, except for model 12, exhibit an upward trend. This trend correlates with a reduced energy intake during the later weeks of the study, pushing individuals into a starvation mode. This increase in \(b_0\) is in line with reduced energy intake and the resulting physiological changes observed towards the end of the study.
+
+
+
+
+
+## Problem 2: Impedance Response of Cancer Cells
 
 ### Data Preparation
-The dataset contains impedance response data for wild-type and mutated cancer cell receptors, with measurements sampled at 1 Hz. The input is the presence or absence of a ligand, and the output is the cell index (CI). Data is visualized and pre-processed before proceeding to system identification.
+The dataset contains impedance response data for wild-type and mutated cancer cell receptors, with measurements sampled at 1 Hz. The input is the presence or absence of a ligand, and the output is the **cell index (CI)**. The data is visualized and pre-processed before proceeding to system identification.
+
+![Figuur 9 – gemeten output voor cellen van het type: WildType, Mutatie334, Mutatie 343, Unknown en input](https://github.com/user-attachments/assets/fbf34e1a-4c07-4891-bb52-03779cde5f78)
+Figuur 9 – Measured output for cells of type: WildType, Mutatie334, Mutatie343, Unknown, and input
+
+---
 
 ### System Identification
-ARX models with different structures are fitted to the data, and the best model for each cell type is selected. For each dataset, the a- and b-parameters are determined. Stable ARX models are split into series, parallel, or feedback configurations, and first-order models are calculated. Stability and coupling of cellular processes are assessed by analyzing these configurations.
+ARX models with different structures are fitted to the data, and the best model for each cell type is selected. For each dataset, the **a- and b-parameters** are determined. Stable ARX models are split into **series, parallel**, or **feedback configurations**, and first-order models are calculated. Stability and coupling of cellular processes are assessed by analyzing these configurations.
+
+| Cell Type  | A1        | A2        | B0       | B1       | Delay    | YIC       | \(R^2\)  |
+|------------|-----------|-----------|----------|----------|----------|-----------|----------|
+| WildType   | -1.9907   | 0.9908    | 0.0062   | -0.0062  | 0        | -27.0150  | 0.9976   |
+| M334       | -1.9949   | 0.9997    | 0.0058   | -0.0058  | 0        | -22.8070  | 0.9987   |
+| M343       | -1.9966   | 0.9994    | 0.0052   | -0.0052  | 0        | -24.9360  | 0.9985   |
+| Unknown    | -1.9942   | 0.9985    | 0.0043   | -0.0043  | 0        | -20.5960  | 0.9991   |
+
+**Table 7** – Identified models for WildType, Mutatie334, Mutatie343, and Unknown cells.
+
+---
 
 ### Classification
-The two unknown receptor types are classified based on model characteristics (a- and b-parameters, SSG, TC-values). Visual methods such as scatter plots and box plots are used for classification, comparing the unknown measurements with the known receptor types.
+The two unknown receptor types are classified based on model characteristics (a- and b-parameters, **SSG**, **TC-values**). Visual methods such as scatter plots and box plots are used for classification, comparing the unknown measurements with the known receptor types.
+
+![Figuur 10 – Boxplots van a1, b1 en b2 per celtype](https://github.com/user-attachments/assets/8f992697-3df5-4e70-b49e-39f85a7b3593)
+Figuur 10 – Boxplots of a1, b1, and b2 per cell type
+
+---
+
+![Figuur 11 – Boxplots van b2 per celtype met C1 en C2 van het celtype Unknown](https://github.com/user-attachments/assets/697cb3a9-abb9-4bc3-960f-2e51e7baa77c)
+Figuur 11 – Boxplots for b2 per cell type with C1 and C2 of the Unknown type
+
+
+
+
+
+
+
