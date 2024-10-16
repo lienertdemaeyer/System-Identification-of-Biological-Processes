@@ -306,8 +306,8 @@ y(k) = \frac{B_0}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
 $$
 
 Where:
-- \( A_1 \) and \( A_2 \) are the poles from the first-order TFs (transfer functions).
-- \( B_0 \) is the constant coefficient for the input function.
+- $\( A_1 \)$ and $\( A_2 \)$ are the poles from the first-order TFs (transfer functions).
+- $\( B_0 \)$ is the constant coefficient for the input function.
 
 The general second-order feedback model can be re-written as:
 
