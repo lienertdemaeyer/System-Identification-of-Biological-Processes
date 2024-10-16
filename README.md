@@ -335,9 +335,12 @@ y(k) = \frac{B_0 + B_1 z^{-1}}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
 For higher-order systems, the parameters are extracted from the second-order model based on the identified poles and coefficients from the first-order transfer functions.
 
 #### Second-Order Feedback Model:
+
+$$
 \[
 y(k) = \frac{B_0 + B_1 z^{-1}}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
 \]
+$$
 
 Where:
 - \( A_1 \), \( A_2 \) are the poles from the combined first-order TF.
