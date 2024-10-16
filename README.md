@@ -189,9 +189,11 @@ _Figure 6 – Distribution of b-parameters_
 
 In the next step, an average model was determined. This method results in the following general model:
 
+$
 \[
 y(k) = 0.9488 \cdot y(k-1) + 0.00048213 \cdot u(k)
 \]
+$
 
 This general model was applied to each column, and the CAPTAIN toolbox was used to obtain a simulated model. The \(R^2_{CAP\_averaged}\) is shown in Table 5.
 
@@ -236,9 +238,9 @@ _Figure 7 – Influence of increasing \(b_1\) parameter_
 
 ##### 3.3.2 SSG and TC
 
-The SSG for a 1st-order model is defined as \(b_0 / (1 + a_1)\). For the population model, this results in 0.0094 kg. Thus, a 1kcal/day decrease in energy intake results in a steady-state decrease in body weight of 9.4 grams.
+The SSG for a 1st-order model is defined as $\(b_0 / (1 + a_1)\)$. For the population model, this results in 0.0094 kg. Thus, a 1kcal/day decrease in energy intake results in a steady-state decrease in body weight of 9.4 grams.
 
-The time constant (TC) is defined as \(-\Delta t / \ln(-a_1)\), which for the population model gives 19.02 weeks. This means it would take 19.02 weeks for the output to reach 63% of its new steady state value after an input change.
+The time constant (TC) is defined as $\(-\Delta t / \ln(-a_1)\$), which for the population model gives 19.02 weeks. This means it would take 19.02 weeks for the output to reach 63% of its new steady state value after an input change.
 
 ---
 
@@ -252,11 +254,11 @@ A noise variance ratio (\(Q_a\)) was estimated using maximum likelihood optimiza
 
 ![Evolution of \(a_1\) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_Figure 8 – Evolution of \(a_1\) parameters vs time (weeks) per individual_
+_Figure 8 – Evolution of $\(a_1\)$ parameters vs time (weeks) per individual_
 
 ![Evolution of \(b_0\) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_Figure 9 – Evolution of \(b_0\) parameters vs time (weeks) per individual_
+_Figure 9 – Evolution of $\(b_0\)$ parameters vs time (weeks) per individual_
 
 | Participant | \(R^2_{DARX}\) |
 |-------------|----------------|
@@ -276,9 +278,9 @@ _Figure 9 – Evolution of \(b_0\) parameters vs time (weeks) per individual_
 
 _Table 6 – \(R^2_{DARX}\) for each individual_
 
-It can be observed that the \(a_1\) parameters remain relatively constant for almost all individuals (Figure 8). Only individuals 8 and 11 show time-dependent variations. Even though most \(a_1\) parameters appear stable, they fluctuate within their boundaries, ranging from -0.5 to -1.25.
+It can be observed that the $\(a_1\)$ parameters remain relatively constant for almost all individuals (Figure 8). Only individuals 8 and 11 show time-dependent variations. Even though most $\(a_1\)$ parameters appear stable, they fluctuate within their boundaries, ranging from -0.5 to -1.25.
 
-The \(b_0\) parameters, on the other hand, show stronger fluctuations but remain within narrow bounds, ranging from 0.005 to 0.0005. All \(b_0\) parameters, except for model 12, exhibit an upward trend. This trend correlates with a reduced energy intake during the later weeks of the study, pushing individuals into a starvation mode. This increase in \(b_0\) is in line with reduced energy intake and the resulting physiological changes observed towards the end of the study.
+The $\(b_0\)$ parameters, on the other hand, show stronger fluctuations but remain within narrow bounds, ranging from 0.005 to 0.0005. All $\(b_0\)$ parameters, except for model 12, exhibit an upward trend. This trend correlates with a reduced energy intake during the later weeks of the study, pushing individuals into a starvation mode. This increase in $\(b_0\)$ is in line with reduced energy intake and the resulting physiological changes observed towards the end of the study.
 
 
 
