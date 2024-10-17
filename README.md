@@ -234,7 +234,11 @@ _Figure 6 – Influence of increasing $\( a_1 \)$ parameter_
 
 ![Figuur 7 – Influence of increasing \( b_1 \) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_Figure 7 – Influence of increasing $b_1$ parameter_
+<figure>
+  <img src="image_url" alt="Evolution of parameters vs time per individual">
+  <figcaption>Figure 7 – Influence of increasing \( b_1 \) parameter</figcaption>
+</figure>
+
 
 ##### 3.3.2 SSG and TC
 
