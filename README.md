@@ -234,7 +234,7 @@ _Figure 6 – Influence of increasing $\( a_1 \)$ parameter_
 
 ![Figuur 7 – Influence of increasing \( b_1 \) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_Figure 7 – Influence of increasing $\( b_1 \)$ parameter_
+_Figure 7 – Influence of increasing \( b_1 \) parameter_
 
 ##### 3.3.2 SSG and TC
 
