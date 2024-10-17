@@ -36,11 +36,12 @@ This pre-processing ensured clean and consistent input data for system identific
 
 ![image](https://github.com/user-attachments/assets/9cda7025-1a62-498c-badf-06962d44f5b9)
 
-Figuur 1 – Plot van lichaamsgewicht ifv van tijd (weken)
+_**Figure 1** – Plot of body weight as a function of time (weeks)_
 
 ![image](https://github.com/user-attachments/assets/3a96bddc-c9d4-4681-a04e-e97b2ad650b6)
 
-Figuur 2 – Plot van energie-inname ifv van tijd (weken)
+_**Figure 2** – Plot of energy intake as a function of time (weeks)_
+
 ---
 
 ### System Identification
@@ -172,19 +173,19 @@ _**Table 5** – SSG and TC per participant_
 
 ![Figure 3 – Plot of measured and modeled data with parameters [1 1 2 0] for Participant 3](https://github.com/user-attachments/assets/8f0ee06e-1f93-4146-9571-9e86f1de8cd1)
 
-_Figure 3 – Plot of measured and modeled data with parameters [1 1 2 0] for Participant 3_
+_**Figure 3** – Plot of measured and modeled data with parameters [1 1 2 0] for Participant 3_
 
 ![Figure 4 – Plot of measured and modeled data with parameters [1 1 0 0] for Participant 3](https://github.com/user-attachments/assets/d30b8617-9852-4f0b-a158-abdf6149ea7e)
 
-_Figure 4 – Plot of measured and modeled data with parameters [1 1 0 0] for Participant 3_
+_**Figure 4** – Plot of measured and modeled data with parameters [1 1 0 0] for Participant 3_
 
 ![Figure 5 – Distribution of a-parameters](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_Figure 5 – Distribution of a-parameters_
+_**Figure 5** – Distribution of a-parameters_
 
 ![Figure 6 – Distribution of b-parameters](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_Figure 6 – Distribution of b-parameters_
+_**Figure 6** – Distribution of b-parameters_
 
 
 
@@ -202,7 +203,7 @@ This general model was applied to each column, and the CAPTAIN toolbox was used 
 
 ![image](https://github.com/user-attachments/assets/5624a705-054b-4b51-95fb-941e6f7adba8)
 
-_Figure 6 – Comparison between BW and population model with EI as input (kg) vs time (weeks)_
+_**Figure 7** – Comparison between BW and population model with EI as input (kg) vs time (weeks)_
 
 | Participant | $\( R^2_{CAP\_averaged} \)$ |
 |-------------|----------------------------|
@@ -231,13 +232,13 @@ No delay is considered because BW measurements occur at the end of each week. Th
 
 ![Figuur 6 – Influence of increasing \( a_1 \) parameter](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_Figure 6 – Influence of increasing $\( a_1 \)$ parameter_
+_**Figure 8** – Influence of increasing $\( a_1 \)$ parameter_
 
 - The $\( b_0 \)$ parameter, on the other hand, has an opposite effect to $\( a_1 \)$. It reduces the simulated output (Figure 7). A higher $\( b_0 \)$ means that food intake has a greater impact on body weight. A higher $\( b_0 \)$ is observed when individuals are in a starvation mode, indicating food is processed more efficiently. Initially, when individuals consume food, $\( a_1 \)$ has no impact, as output stays near steady state. Once weight begins to decrease, $\( b_0 \)$ pushes the output lower, driving the system to a new steady state (weight loss).
 
 ![Figuur 7 – Influence of increasing \( b_1 \) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-Figure 7 – Influence of increasing $$ b_1 $$ parameter
+_**Figure 9** – Influence of increasing $$ b_1 $$ parameter_
 
 
 ##### 3.3.2 SSG and TC
@@ -270,11 +271,11 @@ A noise variance ratio $\( Q_a \)$ was estimated using maximum likelihood optimi
 
 ![Evolution of $\( a_1 \)$ parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_Figure 8 – Evolution of $\( a_1 \)$ parameters vs time (weeks) per individual_
+_**Figure 10** – Evolution of $\( a_1 \)$ parameters vs time (weeks) per individual_
 
 ![Evolution of $\( b_0 \)$ parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_Figure 9 – Evolution of $\( b_0 \)$ parameters vs time (weeks) per individual_
+_**Figure 11** – Evolution of $\( b_0 \)$ parameters vs time (weeks) per individual_
 
 | Participant | $\( R^2_{DARX} \)$ |
 |-------------|--------------------|
@@ -308,7 +309,7 @@ The $\( b_0 \)$ parameters, on the other hand, show stronger fluctuations but re
 The dataset contains impedance response data for wild-type and mutated cancer cell receptors, with measurements sampled at 1 Hz. The input is the presence or absence of a ligand, and the output is the **cell index (CI)**. The data is visualized and pre-processed before proceeding to system identification.
 
 ![Figuur 9 – gemeten output voor cellen van het type: WildType, Mutatie334, Mutatie 343, Unknown en input](https://github.com/user-attachments/assets/fbf34e1a-4c07-4891-bb52-03779cde5f78)  
-*Figuur 9 – Measured output for cells of type: WildType, Mutatie334, Mutatie343, Unknown, and input*
+_**Figuur 12** – Measured output for cells of type: WildType, Mutatie334, Mutatie343, Unknown, and input*_
 
 ---
 
