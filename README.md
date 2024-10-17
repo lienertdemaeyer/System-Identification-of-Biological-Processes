@@ -36,8 +36,11 @@ This pre-processing ensured clean and consistent input data for system identific
 
 ![image](https://github.com/user-attachments/assets/9cda7025-1a62-498c-badf-06962d44f5b9)
 
+Figuur 1 – Plot van lichaamsgewicht ifv van tijd (weken)
+
 ![image](https://github.com/user-attachments/assets/3a96bddc-c9d4-4681-a04e-e97b2ad650b6)
 
+Figuur 2 – Plot van energie-inname ifv van tijd (weken)
 ---
 
 ### System Identification
@@ -72,7 +75,7 @@ The tables below summarize the results for each participant, showing the YIC, $\
 | 12          | 1        | 1        | 0      | 0   | -0.434 | 0.676610    | 2.478  | 1.027e+01| -7.1192   | 0.0000e+00|
 | 13          | 1        | 1        | 0      | 0   | -2.474 | 0.811897    | 2.016  | 6.4755  | -8.1145   | 0.0000e+00|
 
-*Table 1 – Number of a and b parameters per individual, YIC,* $( R^2 )$, *and AIC*
+***Table 1** – Number of a and b parameters per individual, YIC,* $( R^2 )$, *and AIC*
 
 | Participant | $\( R^2_{CAP} \)$ |
 |-------------|--------------------|
@@ -90,7 +93,7 @@ The tables below summarize the results for each participant, showing the YIC, $\
 | 12          | 0.6766             |
 | 13          | 0.8119             |
 
-*Table 2 –* $\( R^2_{CAP} \)$ *per participant*
+***Table 2** –* $\( R^2_{CAP} \)$ *per participant*
 
 ---
 
@@ -113,7 +116,7 @@ The tables below summarize the results for each participant, showing the YIC, $\
 | 13          | 1       | -1.0230  |
 | 14          | 1       | -1.0134  |
 
-_Table 3 – a-parameters for each participant_
+_**Table 3** – a-parameters for each participant_
 
 | Participant | $\(b_0\)$      |
 |-------------|--------------|
@@ -131,7 +134,7 @@ _Table 3 – a-parameters for each participant_
 | 12          | -2.7361E-04  |
 | 13          | -3.4935E-04  |
 
-_Table 4 – b-parameters for each participant_
+_**Table 4** – b-parameters for each participant_
 
 ---
 
@@ -161,7 +164,7 @@ With $\( \Delta t = 1 \)$ min, the following values were computed:
 | 9           | 11.9895| 0.015 |
 | 10          | 9.4655 | 0.1066|
 
-_Table 5 – SSG and TC per participant_
+_**Table 5** – SSG and TC per participant_
 
 ---
 
@@ -197,7 +200,7 @@ $$
 
 This general model was applied to each column, and the CAPTAIN toolbox was used to obtain a simulated model. The $\( R^2_{CAP\_averaged} \)$ is shown in Table 5.
 
-![Figuur 6 – Comparison between BW and population model with EI as input (kg) vs time (weeks)](https://github.com/user-attachments/assets/8f0ee06e-1f93-4146-9571-9e86f1de8cd1)
+![image](https://github.com/user-attachments/assets/5624a705-054b-4b51-95fb-941e6f7adba8)
 
 _Figure 6 – Comparison between BW and population model with EI as input (kg) vs time (weeks)_
 
@@ -212,7 +215,7 @@ _Figure 6 – Comparison between BW and population model with EI as input (kg) v
 | 10          | 0.9316                     |
 | 13          | 0.2043                     |
 
-_Table 5 – $\( R^2_{CAP\_averaged} \)$ per participant_
+***Table 5** –* $\( R^2_{CAP\_averaged} \)$ *per participant*
 
 It is noted that the $\( R^2_{CAP\_averaged} \)$ is good for models 1, 7, 9, and 10. However, for models 2, 5, 8, and 11, the averaged $\( R^2_{CAP} \)$ values are poor. Additionally, no $\( R^2_{CAP\_averaged} \)$ was found for models 3, 6, 12, and 14, as these models are unstable, with poles outside the unit circle on the iopzplot. These conclusions can also be seen in Figure 6. The population model underperforms compared to individual models due to the uneven distribution of the b-parameters (Figure 6). A more even distribution of b-parameters would provide a better representation of the data.
 
@@ -289,7 +292,7 @@ _Figure 9 – Evolution of $\( b_0 \)$ parameters vs time (weeks) per individual
 | 12          | 0.9995             |
 | 13          | 0.9951             |
 
-*Table 6 –* $\( R^2_{DARX} \)$ *for each individual*
+***Table 6** –* $\( R^2_{DARX} \)$ *for each individual*
 
 
 
@@ -343,7 +346,7 @@ $$
 | M343       | -1.9966   | 0.9994    | 0.0052   | -0.0052  | 0        | -24.9360  | 0.9985      |
 | Unknown    | -1.9942   | 0.9985    | 0.0043   | -0.0043  | 0        | -20.5960  | 0.9991      |
 
-**Table 7** – Identified models for WildType, Mutatie334, Mutatie343, and Unknown cells.
+***Table 7** – Identified models for WildType, Mutatie334, Mutatie343, and Unknown cells.*
 
 ---
 
@@ -372,7 +375,7 @@ Where:
 | M3431 | -0.98691  | -0.99968  | 0.00868  | 0.00625  | 75.89573  | 500.23934  | 0.66298   | 1.68965   |
 | Unknown1 | -0.98863  | -0.99942  | 0.01252  | 0.00396  | 186.65236 | 891.53040 | 1.14684   | 5.33281   |
 
-**Table 8** – Poles $\( a_1 \)$, $\( a_2 \)$, coefficients $\( b_1 \)$, $\( b_2 \)$, and characteristics like **TC1**, **TC2**, **SSG1**, **SSG2** for each cell type.
+***Table 8** – Poles* $\( a_1 \)$, $\( a_2 \)$, *coefficients* $\( b_1 \)$, $\( b_2 \)$, *and characteristics like* **TC1**, **TC2**, **SSG1**, **SSG2** *for each cell type.*
 
 ---
 
