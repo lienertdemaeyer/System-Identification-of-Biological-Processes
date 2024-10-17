@@ -289,7 +289,7 @@ _Figure 9 – Evolution of $\( b_0 \)$ parameters vs time (weeks) per individual
 | 12          | 0.9995             |
 | 13          | 0.9951             |
 
-_Table 6 – $\( R^2_{DARX} \)$ for each individual_
+*Table 6 – \( R^2_{DARX} \) for each individual*
 
 It can be observed that the $\( a_1 \)$ parameters remain relatively constant for almost all individuals (Figure 8). Only individuals 8 and 11 show time-dependent variations. Even though most $\( a_1 \)$ parameters appear stable, they fluctuate within their boundaries, ranging from -0.5 to -1.25.
 
