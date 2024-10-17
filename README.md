@@ -94,7 +94,7 @@ The tables below summarize the results for each participant, showing the YIC, $\
 | 12          | 0.6766      |
 | 13          | 0.8119      |
 
-***Table 2** – $R^2_{CAP}$ per participant*
+***Table 2** –* $R^2_{CAP}$ *per participant*
 
 ---
 
