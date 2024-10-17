@@ -199,7 +199,7 @@ $$
 y(k) = 0.9488 \cdot y(k-1) + 0.00048213 \cdot u(k)
 $$
 
-This general model was applied to each column, and the CAPTAIN toolbox was used to obtain a simulated model. The $\( R^2_{CAP\_averaged} \)$ is shown in Table 5.
+This general model was applied to each column, and the CAPTAIN toolbox was used to obtain a simulated model. The $\( R^2_{CAP_{averaged}} \)$ is shown in Table 5.
 
 ![image](https://github.com/user-attachments/assets/5624a705-054b-4b51-95fb-941e6f7adba8)
 
@@ -216,9 +216,9 @@ _**Figure 7** – Comparison between BW and population model with EI as input (k
 | 10          | 0.9316                     |
 | 13          | 0.2043                     |
 
-***Table 6** –* $\( R^2_{CAP_{averaged} \)$ *per participant*
+***Table 6** –* $\( R^2_{CAP_{averaged}} \)$ *per participant*
 
-It is noted that the $\( R^2_{CAP\_averaged} \)$ is good for models 1, 7, 9, and 10. However, for models 2, 5, 8, and 11, the averaged $\( R^2_{CAP} \)$ values are poor. Additionally, no $\( R^2_{CAP\_averaged} \)$ was found for models 3, 6, 12, and 14, as these models are unstable, with poles outside the unit circle on the iopzplot. These conclusions can also be seen in Figure 6. The population model underperforms compared to individual models due to the uneven distribution of the b-parameters (Figure 6). A more even distribution of b-parameters would provide a better representation of the data.
+It is noted that the $\( R^2_{CAP_{averaged}} \)$ is good for models 1, 7, 9, and 10. However, for models 2, 5, 8, and 11, the averaged $\( R^2_{CAP} \)$ values are poor. Additionally, no $\( R^2_{CAP_{averaged}} \)$ was found for models 3, 6, 12, and 14, as these models are unstable, with poles outside the unit circle on the iopzplot. These conclusions can also be seen in Figure 6. The population model underperforms compared to individual models due to the uneven distribution of the b-parameters (Figure 6). A more even distribution of b-parameters would provide a better representation of the data.
 
 #### 3.2 Delay
 
