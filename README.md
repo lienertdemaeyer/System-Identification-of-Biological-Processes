@@ -230,15 +230,15 @@ No delay is considered because BW measurements occur at the end of each week. Th
 
 - The higher the $\( a_1 \)$ parameter, the more the output term $\( a_1 \cdot y(k-1) \)$ is increased, meaning that for each $k$, the preceding $k-1$ term has a greater impact. For most individuals, this means the simulated output is overshadowed by the preceding term $\( y(k-1) \)$. The $\( a_1 \)$ parameter tends to drive the simulated output back to its baseline (Figure 7). Consequently, with a higher $\( a_1 \)$, the system reaches steady state more quickly, limiting weight loss.
 
-![Figuur 6 – Influence of increasing \( a_1 \) parameter](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
+![Figuur 8 – Influence of increasing \( a_1 \) parameter](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_**Figure 8** – Influence of increasing $\( a_1 \)$ parameter_
+***Figure 8** – Influence of increasing* $\( a_1 \)$ *parameter*
 
 - The $\( b_0 \)$ parameter, on the other hand, has an opposite effect to $\( a_1 \)$. It reduces the simulated output (Figure 7). A higher $\( b_0 \)$ means that food intake has a greater impact on body weight. A higher $\( b_0 \)$ is observed when individuals are in a starvation mode, indicating food is processed more efficiently. Initially, when individuals consume food, $\( a_1 \)$ has no impact, as output stays near steady state. Once weight begins to decrease, $\( b_0 \)$ pushes the output lower, driving the system to a new steady state (weight loss).
 
-![Figuur 7 – Influence of increasing \( b_1 \) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
+![Figuur 9 – Influence of increasing \( b_1 \) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_**Figure 9** – Influence of increasing $$ b_1 $$ parameter_
+***Figure 9** – Influence of increasing* $$ b_1 $$ *parameter*
 
 
 ##### 3.3.2 SSG and TC
@@ -271,11 +271,11 @@ A noise variance ratio $\( Q_a \)$ was estimated using maximum likelihood optimi
 
 ![Evolution of $\( a_1 \)$ parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_**Figure 10** – Evolution of $\( a_1 \)$ parameters vs time (weeks) per individual_
+***Figure 10** – Evolution of* $\( a_1 \)$ *parameters vs time (weeks) per individual*
 
 ![Evolution of $\( b_0 \)$ parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_**Figure 11** – Evolution of $\( b_0 \)$ parameters vs time (weeks) per individual_
+***Figure 11** – Evolution of* $\( b_0 \)$ *parameters vs time (weeks) per individual*
 
 | Participant | $\( R^2_{DARX} \)$ |
 |-------------|--------------------|
@@ -308,7 +308,7 @@ The $\( b_0 \)$ parameters, on the other hand, show stronger fluctuations but re
 ### Data Preparation
 The dataset contains impedance response data for wild-type and mutated cancer cell receptors, with measurements sampled at 1 Hz. The input is the presence or absence of a ligand, and the output is the **cell index (CI)**. The data is visualized and pre-processed before proceeding to system identification.
 
-![Figuur 9 – gemeten output voor cellen van het type: WildType, Mutatie334, Mutatie 343, Unknown en input](https://github.com/user-attachments/assets/fbf34e1a-4c07-4891-bb52-03779cde5f78)  
+![Figuur 12 – gemeten output voor cellen van het type: WildType, Mutatie334, Mutatie 343, Unknown en input](https://github.com/user-attachments/assets/fbf34e1a-4c07-4891-bb52-03779cde5f78)  
 _**Figuur 12** – Measured output for cells of type: WildType, Mutatie334, Mutatie343, Unknown, and input*_
 
 ---
@@ -383,11 +383,11 @@ Where:
 ### Classification
 The two unknown receptor types are classified based on model characteristics (a- and b-parameters, **SSG**, **TC-values**). Visual methods such as scatter plots and box plots are used for classification, comparing the unknown measurements with the known receptor types.
 
-![Figuur 10 – Boxplots van a1, b1 en b2 per celtype](https://github.com/user-attachments/assets/8f992697-3df5-4e70-b49e-39f85a7b3593)  
-*Figuur 10 – Boxplots of a1, b1, and b2 per cell type*
+![Figuur 13 – Boxplots van a1, b1 en b2 per celtype](https://github.com/user-attachments/assets/8f992697-3df5-4e70-b49e-39f85a7b3593)  
+*Figuur 13 – Boxplots of a1, b1, and b2 per cell type*
 
-![Figuur 11 – Boxplots van b2 per celtype met C1 en C2 van het celtype Unknown](https://github.com/user-attachments/assets/697cb3a9-abb9-4bc3-960f-2e51e7baa77c)  
-*Figuur 11 – Boxplots for b2 per cell type with C1 and C2 of the Unknown type*
+![Figuur 14 – Boxplots van b2 per celtype met C1 en C2 van het celtype Unknown](https://github.com/user-attachments/assets/697cb3a9-abb9-4bc3-960f-2e51e7baa77c)  
+*Figuur 14 – Boxplots for b2 per cell type with C1 and C2 of the Unknown type*
 
 ---
 
