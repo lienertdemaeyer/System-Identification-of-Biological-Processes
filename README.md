@@ -216,7 +216,7 @@ _**Figure 7** – Comparison between BW and population model with EI as input (k
 | 10          | 0.9316                     |
 | 13          | 0.2043                     |
 
-***Table 5** –* $\( R^2_{CAP\_averaged} \)$ *per participant*
+***Table 6** –* $\( R^2_{CAP\_averaged} \)$ *per participant*
 
 It is noted that the $\( R^2_{CAP\_averaged} \)$ is good for models 1, 7, 9, and 10. However, for models 2, 5, 8, and 11, the averaged $\( R^2_{CAP} \)$ values are poor. Additionally, no $\( R^2_{CAP\_averaged} \)$ was found for models 3, 6, 12, and 14, as these models are unstable, with poles outside the unit circle on the iopzplot. These conclusions can also be seen in Figure 6. The population model underperforms compared to individual models due to the uneven distribution of the b-parameters (Figure 6). A more even distribution of b-parameters would provide a better representation of the data.
 
@@ -238,7 +238,7 @@ No delay is considered because BW measurements occur at the end of each week. Th
 
 ![Figuur 9 – Influence of increasing \( b_1 \) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-***Figure 9** – Influence of increasing* $$ b_1 $$ *parameter*
+***Figure 9** – Influence of increasing* $\( b_1 \)$ *parameter*
 
 
 ##### 3.3.2 SSG and TC
@@ -293,7 +293,7 @@ A noise variance ratio $\( Q_a \)$ was estimated using maximum likelihood optimi
 | 12          | 0.9995             |
 | 13          | 0.9951             |
 
-***Table 6** –* $\( R^2_{DARX} \)$ *for each individual*
+***Table 7** –* $\( R^2_{DARX} \)$ *for each individual*
 
 
 
@@ -309,7 +309,7 @@ The $\( b_0 \)$ parameters, on the other hand, show stronger fluctuations but re
 The dataset contains impedance response data for wild-type and mutated cancer cell receptors, with measurements sampled at 1 Hz. The input is the presence or absence of a ligand, and the output is the **cell index (CI)**. The data is visualized and pre-processed before proceeding to system identification.
 
 ![Figuur 12 – gemeten output voor cellen van het type: WildType, Mutatie334, Mutatie 343, Unknown en input](https://github.com/user-attachments/assets/fbf34e1a-4c07-4891-bb52-03779cde5f78)  
-_**Figuur 12** – Measured output for cells of type: WildType, Mutatie334, Mutatie343, Unknown, and input*_
+_**Figuur 12** – Measured output for cells of type: WildType, Mutatie334, Mutatie343, Unknown, and input_
 
 ---
 
@@ -347,7 +347,7 @@ $$
 | M343       | -1.9966   | 0.9994    | 0.0052   | -0.0052  | 0        | -24.9360  | 0.9985      |
 | Unknown    | -1.9942   | 0.9985    | 0.0043   | -0.0043  | 0        | -20.5960  | 0.9991      |
 
-***Table 7** – Identified models for WildType, Mutatie334, Mutatie343, and Unknown cells.*
+***Table 8** – Identified models for WildType, Mutatie334, Mutatie343, and Unknown cells.*
 
 ---
 
@@ -376,7 +376,7 @@ Where:
 | M3431 | -0.98691  | -0.99968  | 0.00868  | 0.00625  | 75.89573  | 500.23934  | 0.66298   | 1.68965   |
 | Unknown1 | -0.98863  | -0.99942  | 0.01252  | 0.00396  | 186.65236 | 891.53040 | 1.14684   | 5.33281   |
 
-***Table 8** – Poles* $\( a_1 \)$, $\( a_2 \)$, *coefficients* $\( b_1 \)$, $\( b_2 \)$, *and characteristics like* **TC1**, **TC2**, **SSG1**, **SSG2** *for each cell type.*
+***Table 9** – Poles* $\( a_1 \)$, $\( a_2 \)$, *coefficients* $\( b_1 \)$, $\( b_2 \)$, *and characteristics like* **TC1**, **TC2**, **SSG1**, **SSG2** *for each cell type.*
 
 ---
 
