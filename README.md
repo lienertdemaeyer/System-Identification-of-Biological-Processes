@@ -387,7 +387,7 @@ The two unknown receptor types are classified based on model characteristics (a-
 ***Figuur 13** – Boxplots of* $\( a_1 \)$, $\( b_1 \)$, *and* $\( b_2 \)$ *per cell type*
 
 ![Figuur 14 – Boxplots van b2 per celtype met C1 en C2 van het celtype Unknown](https://github.com/user-attachments/assets/697cb3a9-abb9-4bc3-960f-2e51e7baa77c)  
-***Figuur 14** – Boxplots for* $\( b_2 \)$ *per cell type with* $\( c_2 \)$ $and* $\( c_2 \)$ *of the Unknown type*
+***Figuur 14** – Boxplots for* $\( b_2 \)$ *per cell type with* $\( c_2 \)$ *and* $\( c_2 \)$ *of the Unknown type*
 
 ---
 
