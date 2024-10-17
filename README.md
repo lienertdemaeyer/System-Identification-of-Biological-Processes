@@ -146,7 +146,7 @@ $$
 TC = -\frac{\Delta t}{\ln(-a_1)}
 $$
 
-With \( \Delta t = 1 \) min, the following values were computed:
+With $\( \Delta t = 1 \)$ min, the following values were computed:
 
 | Participant | SSG   | TC     |
 |-------------|-------|--------|
@@ -222,9 +222,9 @@ No delay is considered because BW measurements occur at the end of each week. Th
 
 #### 3.3 Time-Invariant Population Model Discussion
 
-##### 3.3.1 Interpretation of \( a_1 \) and \( b_0 \)
+##### 3.3.1 Interpretation of $\( a_1 \)$ and $\( b_0 \)$
 
-- The higher the \( a_1 \) parameter, the more the output term \( a_1 \cdot y(k-1) \) is increased, meaning that for each $k$, the preceding $k-1$ term has a greater impact. For most individuals, this means the simulated output is overshadowed by the preceding term \( y(k-1) \). The \( a_1 \) parameter tends to drive the simulated output back to its baseline (Figure 7). Consequently, with a higher \( a_1 \), the system reaches steady state more quickly, limiting weight loss.
+- The higher the $\( a_1 \)$ parameter, the more the output term \( a_1 \cdot y(k-1) \) is increased, meaning that for each $k$, the preceding $k-1$ term has a greater impact. For most individuals, this means the simulated output is overshadowed by the preceding term \( y(k-1) \). The \( a_1 \) parameter tends to drive the simulated output back to its baseline (Figure 7). Consequently, with a higher \( a_1 \), the system reaches steady state more quickly, limiting weight loss.
 
 ![Figuur 6 – Influence of increasing \( a_1 \) parameter](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
