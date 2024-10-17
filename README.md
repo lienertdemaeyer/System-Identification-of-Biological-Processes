@@ -76,7 +76,7 @@ The tables below summarize the results for each participant, showing the YIC, $R
 | 12          | 1        | 1        | 0      | 0   | -0.434 | 0.676610 | 2.478  | 1.027e+01| -7.1192   | 0.0000e+00|
 | 13          | 1        | 1        | 0      | 0   | -2.474 | 0.811897 | 2.016  | 6.4755  | -8.1145   | 0.0000e+00|
 
-***Table 1** – Number of a and b parameters per individual, YIC, $R^2$, and AIC*
+***Table 1** – Number of a and b parameters per individual, YIC,* $R^2$, *and AIC*
 
 | Participant | $R^2_{CAP}$ |
 |-------------|-------------|
