@@ -262,7 +262,7 @@ For the population model, this gives 19.02 weeks. This means it would take 19.02
 
 The DARX function from the CAPTAIN toolbox was used. In this dynamic ARX model, the parameters vary slightly over time. This variation is modeled as a **random walk sequence**.
 
-A noise variance ratio ($\( Q_a \)$) was estimated using maximum likelihood optimization. After correction, a **smoothing** step was applied.
+A noise variance ratio $\( Q_a \)$ was estimated using maximum likelihood optimization. After correction, a **smoothing** step was applied.
 
 ![Evolution of $\( a_1 \)$ parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
