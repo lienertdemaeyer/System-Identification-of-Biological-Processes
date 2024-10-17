@@ -96,7 +96,7 @@ _Table 2 – $\( R^2_{CAP} \)$ per participant_
 
 ### a and b Parameters
 
-| Participant | \(a_0\) | \(a_1\)  |
+| Participant | $\(a_0\)$ | $\(a_1\)$  |
 |-------------|---------|----------|
 | 1           | 1       | -0.8821  |
 | 2           | 1       | -0.9361  |
@@ -115,7 +115,7 @@ _Table 2 – $\( R^2_{CAP} \)$ per participant_
 
 _Table 3 – a-parameters for each participant_
 
-| Participant | \(b_0\)      |
+| Participant | $\(b_0\)$      |
 |-------------|--------------|
 | 1           | 7.9399E-04   |
 | 2           | 8.9276E-04   |
@@ -224,17 +224,17 @@ No delay is considered because BW measurements occur at the end of each week. Th
 
 ##### 3.3.1 Interpretation of $\( a_1 \)$ and $\( b_0 \)$
 
-- The higher the $\( a_1 \)$ parameter, the more the output term \( a_1 \cdot y(k-1) \) is increased, meaning that for each $k$, the preceding $k-1$ term has a greater impact. For most individuals, this means the simulated output is overshadowed by the preceding term \( y(k-1) \). The \( a_1 \) parameter tends to drive the simulated output back to its baseline (Figure 7). Consequently, with a higher \( a_1 \), the system reaches steady state more quickly, limiting weight loss.
+- The higher the $\( a_1 \)$ parameter, the more the output term $\( a_1 \cdot y(k-1) \)$ is increased, meaning that for each $k$, the preceding $k-1$ term has a greater impact. For most individuals, this means the simulated output is overshadowed by the preceding term $\( y(k-1) \)$. The $\( a_1 \)$ parameter tends to drive the simulated output back to its baseline (Figure 7). Consequently, with a higher $\( a_1 \)$, the system reaches steady state more quickly, limiting weight loss.
 
 ![Figuur 6 – Influence of increasing \( a_1 \) parameter](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_Figure 6 – Influence of increasing \( a_1 \) parameter_
+_Figure 6 – Influence of increasing $\( a_1 \)$ parameter_
 
-- The \( b_0 \) parameter, on the other hand, has an opposite effect to \( a_1 \). It reduces the simulated output (Figure 7). A higher \( b_0 \) means that food intake has a greater impact on body weight. A higher \( b_0 \) is observed when individuals are in a starvation mode, indicating food is processed more efficiently. Initially, when individuals consume food, \( a_1 \) has no impact, as output stays near steady state. Once weight begins to decrease, \( b_0 \) pushes the output lower, driving the system to a new steady state (weight loss).
+- The $\( b_0 \)$ parameter, on the other hand, has an opposite effect to $\( a_1 \)$. It reduces the simulated output (Figure 7). A higher $\( b_0 \)$ means that food intake has a greater impact on body weight. A higher $\( b_0 \)$ is observed when individuals are in a starvation mode, indicating food is processed more efficiently. Initially, when individuals consume food, $\( a_1 \)$ has no impact, as output stays near steady state. Once weight begins to decrease, $\( b_0 \)$ pushes the output lower, driving the system to a new steady state (weight loss).
 
 ![Figuur 7 – Influence of increasing \( b_1 \) parameter](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_Figure 7 – Influence of increasing \( b_1 \) parameter_
+_Figure 7 – Influence of increasing $\( b_1 \)$ parameter_
 
 ##### 3.3.2 SSG and TC
 
@@ -262,15 +262,15 @@ For the population model, this gives 19.02 weeks. This means it would take 19.02
 
 The DARX function from the CAPTAIN toolbox was used. In this dynamic ARX model, the parameters vary slightly over time. This variation is modeled as a **random walk sequence**.
 
-A noise variance ratio (\( Q_a \)) was estimated using maximum likelihood optimization. After correction, a **smoothing** step was applied.
+A noise variance ratio $(\( Q_a \)$) was estimated using maximum likelihood optimization. After correction, a **smoothing** step was applied.
 
-![Evolution of \( a_1 \) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
+![Evolution of $\( a_1 \)$ parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/767acc78-8ff7-4221-8db4-7056d6bf105e)
 
-_Figure 8 – Evolution of \( a_1 \) parameters vs time (weeks) per individual_
+_Figure 8 – Evolution of $\( a_1 \)$ parameters vs time (weeks) per individual_
 
-![Evolution of \( b_0 \) parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
+![Evolution of $\( b_0 \)$ parameters vs time (weeks) per individual](https://github.com/user-attachments/assets/cd4a04a9-c45d-4417-8d1c-48de65a26ebd)
 
-_Figure 9 – Evolution of \( b_0 \) parameters vs time (weeks) per individual_
+_Figure 9 – Evolution of $\( b_0 \)$ parameters vs time (weeks) per individual_
 
 | Participant | $\( R^2_{DARX} \)$ |
 |-------------|--------------------|
@@ -290,9 +290,9 @@ _Figure 9 – Evolution of \( b_0 \) parameters vs time (weeks) per individual_
 
 _Table 6 – $\( R^2_{DARX} \)$ for each individual_
 
-It can be observed that the \( a_1 \) parameters remain relatively constant for almost all individuals (Figure 8). Only individuals 8 and 11 show time-dependent variations. Even though most \( a_1 \) parameters appear stable, they fluctuate within their boundaries, ranging from -0.5 to -1.25.
+It can be observed that the $\( a_1 \)$ parameters remain relatively constant for almost all individuals (Figure 8). Only individuals 8 and 11 show time-dependent variations. Even though most $\( a_1 \)$ parameters appear stable, they fluctuate within their boundaries, ranging from -0.5 to -1.25.
 
-The \( b_0 \) parameters, on the other hand, show stronger fluctuations but remain within narrow bounds, ranging from 0.005 to 0.0005. All \( b_0 \) parameters, except for model 12, exhibit an upward trend. This trend correlates with a reduced energy intake during the later weeks of the study, pushing individuals into a starvation mode. This increase in \( b_0 \) is in line with reduced energy intake and the resulting physiological changes observed towards the end of the study.
+The $\( b_0 \)$ parameters, on the other hand, show stronger fluctuations but remain within narrow bounds, ranging from 0.005 to 0.0005. All $\( b_0 \)$ parameters, except for model 12, exhibit an upward trend. This trend correlates with a reduced energy intake during the later weeks of the study, pushing individuals into a starvation mode. This increase in $\( b_0 \)$ is in line with reduced energy intake and the resulting physiological changes observed towards the end of the study.
 
 ---
 
@@ -316,8 +316,8 @@ y(k) = \frac{B_0}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
 $$
 
 Where:
-- \( A_1 \) and \( A_2 \) are the poles from the first-order TFs (transfer functions).
-- \( B_0 \) is the constant coefficient for the input function.
+- $\( A_1 \)$ and $\( A_2 \)$ are the poles from the first-order TFs (transfer functions).
+- $\( B_0 \)$ is the constant coefficient for the input function.
 
 The general second-order feedback model can be re-written as:
 
@@ -354,8 +354,8 @@ y(k) = \frac{B_0 + B_1 z^{-1}}{1 + A_1 z^{-1} + A_2 z^{-2}} u(k)
 $$
 
 Where:
-- \( A_1 \), \( A_2 \) are the poles from the combined first-order TF.
-- \( B_0 \), \( B_1 \) represent the coefficients of the input function.
+- $\( A_1 \)$, $\( A_2 \)$ are the poles from the combined first-order TF.
+- $\( B_0 \)$, $\( B_1 \)$ represent the coefficients of the input function.
 
 #### Table of Parameters for Each Cell Type:
 | Cell  | A1        | A2        | B1       | B2       | TC1       | TC2        | SSG1      | SSG2      |
@@ -369,7 +369,7 @@ Where:
 | M3431 | -0.98691  | -0.99968  | 0.00868  | 0.00625  | 75.89573  | 500.23934  | 0.66298   | 1.68965   |
 | Unknown1 | -0.98863  | -0.99942  | 0.01252  | 0.00396  | 186.65236 | 891.53040 | 1.14684   | 5.33281   |
 
-**Table 8** – Poles \( a_1 \), \( a_2 \), coefficients \( b_1 \), \( b_2 \), and characteristics like **TC1**, **TC2**, **SSG1**, **SSG2** for each cell type.
+**Table 8** – Poles $\( a_1 \)$, $\( a_2 \)$, coefficients $\( b_1 \)$, $\( b_2 \)$, and characteristics like **TC1**, **TC2**, **SSG1**, **SSG2** for each cell type.
 
 ---
 
